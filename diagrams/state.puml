@@ -1,0 +1,57 @@
+@startuml
+hide empty description
+state "Farmer" as f1
+state "Farmer" as f2
+state "Farmer" as f3
+state "Farmer" as f4
+state "Distributor" as d1
+state "Distributor" as d2
+state "Retailer" as r1
+state "Consumer" as c1
+
+[*] -> f1
+f1 --> isSeller
+isSeller --> harvestItem
+
+f1 -> f2
+f2 --> isSeller...isHarvested
+isSeller...isHarvested --> processItem
+
+f2 -> f3
+f3 --> isSeller...isProcessed
+isSeller...isProcessed --> packItem
+
+f3 -> f4
+f4 --> isSeller...isPacked
+isSeller...isPacked --> sellItem
+
+f4 -> d1
+d1 --> isBuyer...isForSale...isPaidEnough...isCheckValue
+isBuyer...isForSale...isPaidEnough...isCheckValue --> buyItem
+
+d1 -> d2
+d2 --> isBuyer...isSold
+isBuyer...isSold --> shipItem
+
+d2 -> r1
+r1 --> isRetailer...isShipped
+isRetailer...isShipped --> receiveItem
+
+r1 -> c1
+c1 --> isConsumer...isForPurchase
+isConsumer...isForPurchase --> purchaseItem
+
+c1 -> [*]
+
+state Coffee {
+  [*] -> harvested
+  harvested -> processed
+  processed -> packed
+  packed -> forSale
+  forSale -> sold
+  sold -> shipped
+  shipped -> received
+  received -> purchased
+  purchased -> [*]
+}
+@enduml

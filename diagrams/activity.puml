@@ -1,0 +1,24 @@
+@startuml
+
+title Activity \n
+|Farmer|
+start
+
+:Harvest;
+:Process;
+:Pack;
+:Add;
+
+|Distributor|
+:buy;
+:ship;
+
+|Retailer|
+:receive;
+
+|Consumer|
+:purchase;
+
+stop
+
+@enduml

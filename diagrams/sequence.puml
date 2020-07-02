@@ -1,0 +1,14 @@
+@startuml
+title Sequence \n
+
+Coffee <- Farmer: harvestItem()
+Coffee <- Farmer: processItem()
+Coffee <- Farmer: packItem()
+Coffee <- Farmer: addItem()
+Farmer <- Distributor: buyItem()
+Distributor -> Retailer: shipItem()
+Distributor <- Retailer: receiveItem()
+Retailer <- Consumer: purchaseItem()
+
+Coffee -> Consumer: fetchItem()
+@enduml

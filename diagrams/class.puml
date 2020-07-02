@@ -1,0 +1,18 @@
+@startuml
+
+package CoffeeAccessControl {
+Roles <-- FarmerRole
+Roles <-- Distributor
+Roles <-- Retailer
+Roles <-- ConsumerRole
+}
+
+package CoffeeBase {
+class SupplyChain
+}
+
+package CoffeeCore {
+class Ownable
+}
+
+@enduml
