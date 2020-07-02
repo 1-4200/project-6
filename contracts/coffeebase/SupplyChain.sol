@@ -352,7 +352,7 @@ contract SupplyChain is ConsumerRole, DistributorRole, FarmerRole, RetailerRole 
         productID = items[_upc].productID;
         productNotes = items[_upc].productNotes;
         productPrice = items[_upc].productPrice;
-        itemState = items[_upc].itemState;
+        itemState = uint(items[_upc].itemState);
         distributorID = items[_upc].distributorID;
         retailerID = items[_upc].retailerID;
         consumerID = items[_upc].consumerID;
