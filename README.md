@@ -13,3 +13,8 @@ Node v14.0.0
 ```$xslt
 Web3.js v1.2.1
 ```
+
+## Contract at the Rinkeby test network
+```$xslt
+0x325d2127C3eA25299A18F0eb5214293154263e37
+```
